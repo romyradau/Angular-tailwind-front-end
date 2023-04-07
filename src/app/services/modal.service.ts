@@ -20,6 +20,13 @@ export class ModalService {
     })
   }
 
+  unregister(id: string){
+    this.modals = this.modals.filter(
+      element => element.id !== id
+    )
+  }
+  //puts all but the id objct in a new array
+
   isModalVisible(id: string): boolean{
     return Boolean(this.modals.find(element => element.id === id)?.visible)
     // return !!this.modals.find(element => element.id === id)?.visible
