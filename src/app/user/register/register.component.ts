@@ -12,15 +12,30 @@ export class RegisterComponent {
     registerForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
-        // Validators.minLength(3)
-        //is now in the <> file
-        //but normally all validation rules will be stored in a class ;)
+        Validators.minLength(3)
+
       ]),
-      email: new FormControl(''),
-      age: new FormControl(''),
-      pw: new FormControl(''),
-      pwconfirm: new FormControl(''),
-      phone: new FormControl('')
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email
+      ]),
+      age: new FormControl('', [
+        Validators.required,
+        Validators.min(18),
+        Validators.max(120)
+      ]),
+      pw: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm)
+      ]),
+      pwconfirm: new FormControl('', [
+        Validators.required
+      ]),
+      phone: new FormControl('', [
+        // Validators.required,
+        // Validators.min(13),
+        // Validators.max(13)
+      ])
 
     })
     //retrieve info from the form and controll it
