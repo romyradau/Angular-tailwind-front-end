@@ -12,14 +12,14 @@ export class LoginComponent {
     password: ''
   }
 
-  // showAlert = false
-  // alertMsg = 'Please wait! Your being logged in.'
-  // alertColor = 'blue'
+  showAlert = false
+  alertMsg = 'Please wait! Your being logged in.'
+  alertColor = 'blue'
 
   login(){
     console.log(this.credentials)
-    // this.showAlert = true
-    // this.alertMsg = 'Please wait! Your being logged in.'
-    // this.alertColor = 'blue'
+    this.showAlert = true
+    this.alertMsg = 'Please wait! Your being logged in.'
+    this.alertColor = 'blue'
   }
 }

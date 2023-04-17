@@ -8,6 +8,11 @@ import { FormControl } from '@angular/forms';
 })
 export class InputComponent {
 
-  @Input() control: FormControl = new FormControl
+  @Input() control: FormControl = new FormControl()
+  @Input() type = 'text'
+  @Input() placeholder = ''
+  @Input() format = ''
+  // prevents ngx-mask from working
+  
 
 }
